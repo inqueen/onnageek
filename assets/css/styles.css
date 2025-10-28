@@ -1,28 +1,25 @@
-
 /* ======================================================= */
 /* 1. MOBILE FIRST (DEFAULT) */
 /* ======================================================= */
 
 :root {
-    --onna-line: #ff0000;
-    --background: #111;
-    --color-font-principal: #9932CC;
-    --color-font-secundary: #CCC9EA;
+    --background: #1B0000;
+    --color-font-principal: #C31C2A;
+    --color-font-secundary: #F1F0F0;
 
-    --based-font: 'Roboto', sans-serif;
+    --based-font: "Montserrat", sans-serif;
     --basic-size: 1rem;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    min-height: 100vh; 
-    
+    align-items: center;
+    min-height: 100vh;
     font-family: var(--based-font);
     font-size: var(--basic-size);
+    font-optical-sizing: auto;
+    font-style: normal;
     line-height: 1.5;
     background-color: var(--background);
     color: #f4f4f4;
@@ -31,17 +28,15 @@ body {
 
 main {
     width: 100%;
-    max-width: 700px;
-    padding: 1rem;
+    max-width: 800px;
+    padding: 1rem 1rem 1rem 1rem;
 }
 
 /* LOGO ONNA GEEK */
 .logo-container {
     position: relative;
     width: 90%;
-    height: 100vh; 
-    margin-left: 10%;
-    margin-right: 10%;
+    height: 100vh;
     background-color: #000;
     display: flex;
     justify-content: center;
@@ -50,37 +45,61 @@ main {
 }
 
 .logo-image {
-    position: absolute;
     z-index: 10;
-    max-width: 100%; 
+    width: 100%;
+    justify-self: center;
+    align-self: center;
     height: auto;
     filter: brightness(150%);
 }
 
 .video {
-    position: relative;
+    position: fixed;
     top: 0;
+    bottom: 0;
+    right: 0;
     left: 0;
-    min-width: 100%; 
+    min-width: 100%;
     min-height: 100%;
-    object-fit: cover;
-    box-shadow: 0 0 1em 1em var(--onna-line);
 }
 
 /* Estilo para a Seção de Conteúdo */
-.content-section {
-    display: block; 
-    padding: 1rem 0;
-    margin: 2rem auto; /* Garante margem superior e inferior e ajuda na centralização, embora o 'body' já o faça. */
-    /* Remove a altura fixa */
+#content-section {
+    position: absolute;
+    margin: -20.5rem;
+    width: 100%;
+    justify-self: center;
+    align-content: center;
 }
 
-.content-section h1 {
+#content-section h1 {
     color: var(--color-font-principal);
+    font-weight: 600;
+    font-size: 1.3rem;
 }
 
-.content-section p {
+#content-section p {
     color: var(--color-font-secundary);
+    font-weight: 350;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.social-media-icon {
+    justify-self: center;
+    align-items: center;
+    width: 6%;
+    filter: invert(1);
+    margin: 0.9rem;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    justify-self: center;
+    align-content: center;
+    font-size: 0.7rem;
+    margin: 0;
 }
 
 /* ======================================================= */
@@ -88,11 +107,32 @@ main {
 /* ======================================================= */
 
 @media (min-width: 768px) {
-    .logo-container {
-        height: 100vh; 
+    .logo-image {
+        width: 30vw;
     }
 
-    .logo-image {
-        max-width: 100%; 
+    .social-media-icon {
+        width: 2%;
+        margin: 0.5rem;
+    }
+
+    .onna-rights {
+        margin-block-end: 50%;
+    }
+}
+
+@media (min-width: 360px) {
+    .logo-container {
+        width: 80%;
+        height: 80vh;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    #content-section {
+        margin: -13rem;
     }
 }
