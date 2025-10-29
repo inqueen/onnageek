@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100%;
     font-family: var(--based-font);
     font-size: var(--basic-size);
     font-optical-sizing: auto;
@@ -29,28 +29,26 @@ body {
 main {
     width: 100%;
     max-width: 800px;
-    padding: 1rem 1rem 1rem 1rem;
 }
 
 /* LOGO ONNA GEEK */
 .logo-container {
     position: relative;
     width: 90%;
-    height: 100vh;
+    height: 55vh;
     background-color: #000;
     display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
 }
 
 .logo-image {
-    z-index: 10;
+    position: absolute;
+    z-index: 20;
     width: 100%;
     justify-self: center;
     align-self: center;
-    height: auto;
     filter: brightness(150%);
+    margin-top: 10%;
 }
 
 .video {
@@ -65,23 +63,22 @@ main {
 
 /* Estilo para a Seção de Conteúdo */
 #content-section {
-    position: absolute;
-    margin: -20.5rem;
+    position: relative;
     width: 100%;
-    justify-self: center;
-    align-content: center;
+    justify-self: auto;
+    align-self: baseline;
 }
 
 #content-section h1 {
     color: var(--color-font-principal);
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 #content-section p {
     color: var(--color-font-secundary);
     font-weight: 350;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin: 0;
 }
 
@@ -93,13 +90,14 @@ main {
     margin: 0.9rem;
 }
 
-footer {
+footer p {
     position: relative;
+    display: flex;
     width: 100%;
     justify-self: center;
     align-content: center;
-    font-size: 0.7rem;
-    margin: 0;
+    font-size: 60%;
+    margin-top: 95%;
 }
 
 /* ======================================================= */
@@ -107,12 +105,18 @@ footer {
 /* ======================================================= */
 
 @media (min-width: 768px) {
+    main {
+        max-height: 700px;
+    }
+
     .logo-image {
-        width: 30vw;
+        width: 28%;
+        left: 50%;
+        right: 50%;
     }
 
     .social-media-icon {
-        width: 2%;
+        width: 3vw;
         margin: 0.5rem;
     }
 
@@ -121,18 +125,16 @@ footer {
     }
 }
 
-@media (min-width: 360px) {
-    .logo-container {
-        width: 80%;
-        height: 80vh;
-        background-color: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
+@media (min-width: 431px) and (max-width: 769px) {
+    .logo-image {
+        width: 55%;
+        left: 50%;
+        right: 50%;
     }
+}
 
-    #content-section {
-        margin: -13rem;
+@media (max-width: 390px) {
+    footer p {
+        margin-top: 50%;
     }
 }
